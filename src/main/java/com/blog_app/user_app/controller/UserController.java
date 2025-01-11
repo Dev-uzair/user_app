@@ -12,7 +12,6 @@ import java.util.List;
 @RequestMapping("/user")
 public class UserController {
 
-
     private final UserService service;
 
     @Autowired
@@ -26,17 +25,19 @@ public class UserController {
     }
 
     @GetMapping("/findById/{userId}")
-    public UserResponse findById(@PathVariable Long userId){
-        return service.findById(userId);
+    public UserResponse findById(@PathVariable Long userId) {
+        return service.findById ( userId );
     }
-@GetMapping("/")
-    public List<UserResponse> findAll(){
-        return service.findAll();
+
+    @GetMapping("/")
+    public List<UserResponse> findAll() {
+//        System.out.println ("here" );
+        return service.findAll ( );
     }
 
     @GetMapping("/isUserExist/{userId}")
-    public Boolean findUserId(@PathVariable Long userId){
-        return service.findUser(userId);
+    public Boolean findUserId(@PathVariable Long userId) {
+        return service.findUser ( userId );
     }
 
 }

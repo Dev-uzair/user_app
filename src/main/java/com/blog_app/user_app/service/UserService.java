@@ -34,7 +34,7 @@ public class UserService {
         return repository.findAll ( ).stream ( ).map ( UserResponse::new ).toList ( );
     }
 
-    public Boolean findUser(Long userId) {
-        return repository.existsById ( userId );
+    public Boolean findUser(Long userId)  {
+               return repository.existsById ( userId );
     }
 }
